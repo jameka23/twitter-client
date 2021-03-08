@@ -20,6 +20,7 @@ class HomeTableTableViewController: UITableViewController {
         
         //screen will dismiss; disapper
         self.dismiss(animated: true, completion:nil)
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
     }
     
     // MARK: - Table view data source
