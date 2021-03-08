@@ -9,27 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Y1J-22-YZN">
             <objects>
-                <viewController id="hzj-Me-j9l" sceneMemberID="viewController">
+                <viewController id="hzj-Me-j9l" customClass="LoginViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kY5-kX-Gd8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t40-Yl-G6M">
+                                <rect key="frame" x="63.666666666666657" y="395" width="263" height="54"/>
+                                <color key="backgroundColor" red="0.68674941312191495" green="0.84931314748225106" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="7fa-MI-ntH"/>
+                                    <constraint firstAttribute="height" constant="54" id="aou-WZ-JbW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="OnLoginButton:" destination="hzj-Me-j9l" eventType="touchUpInside" id="gAo-w3-rsD"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PXD-dE-ZDb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t40-Yl-G6M" firstAttribute="centerY" secondItem="kY5-kX-Gd8" secondAttribute="centerY" id="7XV-A5-1Yu"/>
+                            <constraint firstItem="t40-Yl-G6M" firstAttribute="centerX" secondItem="kY5-kX-Gd8" secondAttribute="centerX" id="KKW-Rh-JhG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="XZq-ea-VGh" kind="presentation" identifier="loginToHome" id="esf-UW-0PV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="My9-hm-1yH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="150" y="50"/>
+            <point key="canvasLocation" x="-103" y="50"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="nRv-mI-esJ">
             <objects>
                 <tableViewController id="meH-fK-tXH" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cwD-N1-Gv5">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -58,7 +82,7 @@
             <objects>
                 <navigationController id="XZq-ea-VGh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sYg-GV-gIc">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
