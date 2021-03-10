@@ -13,7 +13,25 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetContent: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var retweetButton: UIButton!
+
+    var favoritedTweet: Bool = false
     
+    func setFavorited(_ isFavorited:Bool){
+        favoritedTweet = isFavorited
+        if(favoritedTweet){
+            favoriteButton.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
+        }
+        else{
+            favoriteButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
+        }
+    }
+    
+    @IBAction func retweetTweet(_ sender: Any) {
+    }
+    @IBAction func favoriteTweet(_ sender: Any) {
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -24,7 +24,8 @@ class HomeTableTableViewController: UITableViewController {
         // reload; spinner
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
-
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -40,7 +41,7 @@ class HomeTableTableViewController: UITableViewController {
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         numberOfTweets = numberOfTweets + 20
         
-        let params = ["counts": numberOfTweets]
+        let params = ["count": numberOfTweets]
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: params,  success: { (tweets: [NSDictionary]) in
             //clean and repopulate
             self.tweetArray.removeAll()
@@ -63,7 +64,7 @@ class HomeTableTableViewController: UITableViewController {
         
         let url = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         //let url = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-        let params = ["counts": numberOfTweets]
+        let params = ["count": numberOfTweets]
 
         
         TwitterAPICaller.client?.getDictionariesRequest(url: url, parameters: params, success: { (tweets: [NSDictionary]) in
@@ -115,6 +116,8 @@ class HomeTableTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        
         
         return cell
     }
