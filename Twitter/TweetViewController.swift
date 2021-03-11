@@ -17,6 +17,8 @@ class TweetViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         tweetTextView.delegate = self
         
+        
+        
         // tell text to be a first responder
         tweetTextView.becomeFirstResponder()
         
