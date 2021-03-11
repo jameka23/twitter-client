@@ -16,7 +16,9 @@ class TweetViewController: UIViewController {
         
         // tell text to be a first responder
         tweetTextView.becomeFirstResponder()
-        
+        tweetTextView.layer.borderColor = UIColor.lightGray.cgColor
+        tweetTextView.layer.borderWidth = 2.3
+        tweetTextView.layer.cornerRadius = 15
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -24,7 +26,7 @@ class TweetViewController: UIViewController {
     }
     
     @IBAction func tweet(_ sender: Any) {
-        if (tweetTextView.text.isEmpty){
+        if (!tweetTextView.text.isEmpty){
             TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {
                 self.dismiss(animated: true, completion: nil)
             }, failure: { (Error) in
