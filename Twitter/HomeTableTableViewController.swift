@@ -38,7 +38,7 @@ class HomeTableTableViewController: UITableViewController {
     func loadMoreTweets(){
         // get more tweets; infinite scroll
         
-        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let myUrl = "https://api.twitter.com/1.1/statuses/user_timeline?screen_name=hashtagcoder1.json"
         numberOfTweets = numberOfTweets + 20
         
         let params = ["count": numberOfTweets]
@@ -117,7 +117,8 @@ class HomeTableTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
-        
+        cell.setFavorited(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
         
         return cell
     }
