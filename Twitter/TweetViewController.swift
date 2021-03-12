@@ -13,11 +13,14 @@ class TweetViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var tweetTextView: UITextView!
     
+    @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tweetTextView.delegate = self
         
         
+        profileImage.layer.masksToBounds = true
+        profileImage.layer.cornerRadius = profileImage.bounds.width / 2
         
         // tell text to be a first responder
         tweetTextView.becomeFirstResponder()
