@@ -22,7 +22,9 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./twitter.mov' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='./like.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='./tweet.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='./unlike.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 
 
