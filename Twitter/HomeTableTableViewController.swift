@@ -14,6 +14,7 @@ class HomeTableTableViewController: UITableViewController {
     var tweetArray = [NSDictionary]() //array of dictionaries
     var numberOfTweets: Int!
     let myRefreshControl = UIRefreshControl()
+    var userPic: Any!
     
     
     override func viewDidLoad() {
@@ -51,7 +52,6 @@ class HomeTableTableViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
-
             
         }, failure: { (Error) in
             print("Could not retrieve tweet!")
@@ -104,8 +104,8 @@ class HomeTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCellTableViewCell
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
-        
-        
+        print(user)
+        userPic = URL(string: (user["profile_image_url_https"] as? String)!)
         
         cell.userNameLabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
